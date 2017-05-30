@@ -1,5 +1,8 @@
 # Lazy MySql
 
+**This is currently experimental - use at your own risk**
+
+
 Implements a lazy MySql database connection for Laravel that only connects to the individual `read` or `write` databases when they are actually used - by [Zara 4](http://zara4.com)
 Only tested using Laravel 5.1
 
@@ -19,7 +22,7 @@ Unlike the standard Laravel MySql database driver, Lazy MySql does not connect t
 A request that only reads data from your database (SELECT) will only connect to the `read` database. A request that only writes data to the database (INSERT, UPDATE, DELETE) will only connect to the `write` database.
 
 
-[Database Replication Structure](https://blog.zara4.com/wp-content/uploads/2017/05/lazy-mysql-replication-setup.png)
+![Database Replication Structure](https://blog.zara4.com/wp-content/uploads/2017/05/lazy-mysql-replication-setup.png)
 
 
 
