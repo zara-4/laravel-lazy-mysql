@@ -15,14 +15,14 @@ This assumes a set up where you have configured Laravel to use separate `read` a
 If you are deploying your Laravel application globally on multiple servers across the world, you will likely encounter issues with database connection latency.
 You can speed up `read` database queries using local MySql database read replicas; however this does not overcomes the delay caused by connecting to the `write` database if you have a single master `write` database in a remote location.
 
+![Database Replication Structure](https://blog.zara4.com/wp-content/uploads/2017/05/lazy-mysql-replication-setup.png)
+
 The standard Laravel MySql database driver connects to both the `read` and `write` databases specified in your configuration as soon as the connection is first used.
 The result is an unnecessary delay when you only want to read data from the database, Laravel still connects to the `write` database even though it isn't used.
 
 Unlike the standard Laravel MySql database driver, Lazy MySql does not connect to the individual `read` or `write` databases until they are actually used by a query.
 A request that only reads data from your database (SELECT) will only connect to the `read` database. A request that only writes data to the database (INSERT, UPDATE, DELETE) will only connect to the `write` database.
 
-
-![Database Replication Structure](https://blog.zara4.com/wp-content/uploads/2017/05/lazy-mysql-replication-setup.png)
 
 
 

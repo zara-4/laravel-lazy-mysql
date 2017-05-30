@@ -1,5 +1,5 @@
 {
-  "name": "zara4/lazy-mysql",
+  "name": "laravel-lazy-mysql",
   "description": "A lazy mysql based Eloquent model and Query builder for Laravel",
   "keywords": ["laravel","eloquent","mysql","lazy-mysql","database","model"],
   "homepage": "https://github.com/zara-4/laravel-lazy-mysql",
