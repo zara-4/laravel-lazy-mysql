@@ -36,7 +36,7 @@ class Connection extends MySqlConnection {
 
     // Establish write connector
     $this->writeConnected   = false;
-    $this->writeConfig      = Config::getWriteConfig($config);
+    $this->writeConfig      = Config::hasWriteConfig($config) ? Config::getWriteConfig($config) : $config;
     $this->writeConnector   = new Connector();
 
     // Establish read connector (if provided)

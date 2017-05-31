@@ -16,6 +16,15 @@ class Config {
 
 
   /**
+   * @param array $config
+   * @return bool
+   */
+  public static function hasWriteConfig(array $config) {
+    return isset($config['write']);
+  }
+
+
+  /**
    * Get the read configuration for a read / write connection.
    *
    * @param  array  $config
