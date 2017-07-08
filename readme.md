@@ -1,19 +1,19 @@
 # Lazy MySQL
 
-**This is currently experimental - use at your own risk**
-
-
 Implements a lazy MySQL database connection for Laravel that only connects to the individual `read` or `write` databases when they are actually used - by [Zara 4](http://zara4.com)
 Only tested using Laravel 5.1
 
 This assumes a set up where you have configured Laravel to use separate `read` and `write` MySQL database connections; and the write database is slow to connect, most likely due to a high latency connection caused by distance.
 
+Zara 4 is a globally distributed [image compression](http://zara4.com) service, and currently uses the `lazy-mysql` database driver.
+
+You can view our accompanying blog post for [Laravel Lazy Read/Write Database Connection](https://blog.zara4.com/laravel-lazy-readwrite-database-connection/)
 
 
 ## Introduction
 
 If you are deploying your Laravel application globally on multiple servers across the world, you will likely encounter issues with database connection latency.
-You can speed up `read` database queries using local MySQL database read replicas; however this does not overcomes the delay caused by connecting to the `write` database if you have a single master `write` database in a remote location.
+You can speed up `read` database queries using local MySQL database read replicas; however this does not overcome the delay caused by connecting to the `write` database if you have a single master `write` database in a remote location.
 
 ![Database Replication Structure](https://blog.zara4.com/wp-content/uploads/2017/05/lazy-mysql-replication-setup.png)
 
